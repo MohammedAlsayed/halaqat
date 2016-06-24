@@ -18,14 +18,13 @@ class CreateEmployeesTable extends Migration
             $table->string('f_name',100);
             $table->string('middle_name',100);
             $table->string('l_name',100);
-            $table->integer('role_id');
-            $table->integer('mobile_id');
+            $table->unsignedInteger('role_id');
+            $table->unsignedInteger('mobile_id');
+            $table->unsignedInteger('halaqah_id');
+            $table->unsignedInteger('mosque_id');
             $table->timestamps();
         });
-        Schema::create('employees', function (Blueprint $table) {
-            $table->foreign('role_id')->refernces('id')->on('roles');
-            $table->foreign('mosque_id')->refernces('id')->on('mosques');
-        });
+
  
     }
 

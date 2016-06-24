@@ -2,6 +2,7 @@
 
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
+use Illuminate\Support\Facades\Schema;
 
 class CreateMethodologiesTable extends Migration
 {
@@ -12,8 +13,9 @@ class CreateMethodologiesTable extends Migration
      */
     public function up()
     {
-        Schema::create('methodology', function (Blueprint $table) {
+        Schema::create('methodologies', function (Blueprint $table) {
             $table->increments('id');
+            $table->string('name',100);
             $table->timestamps();
         });
     }
@@ -25,6 +27,6 @@ class CreateMethodologiesTable extends Migration
      */
     public function down()
     {
-        Schema::drop('methodology');
+        Schema::drop('methodologies');
     }
 }

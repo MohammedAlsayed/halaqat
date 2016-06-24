@@ -15,15 +15,13 @@ class CreateStudentAttendenceTable extends Migration
     {
         Schema::create('student_attendence', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('student_id');
+            $table->unsignedInteger('student_id');
             $table->boolean('attended');
             $table->boolean('execuse');
-            $table->string('reason',255);
+            $table->string('reason',255)->nullable();
             $table->timestamps();
         });
-        Schema::create('student_attendence', function (Blueprint $table) {
-            $table->foreign('student_id')->refernces('id')->on('students')->onDelete('CASCADE');
-        });
+
     }
 
     /**

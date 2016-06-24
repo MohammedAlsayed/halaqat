@@ -14,6 +14,8 @@ class CreateRecitationQuantityTable extends Migration
     {
         Schema::create('recitation_quantity', function (Blueprint $table) {
             $table->increments('id');
+            $table->string('surah',50);
+            $table->integer('ayah');
             $table->timestamps();
         });
     }

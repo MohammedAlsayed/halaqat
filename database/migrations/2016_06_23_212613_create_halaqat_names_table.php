@@ -14,6 +14,7 @@ class CreateHalaqatNamesTable extends Migration
     {
         Schema::create('halaqat_names', function (Blueprint $table) {
             $table->increments('id');
+            $table->string('name', 100);
             $table->timestamps();
         });
     }

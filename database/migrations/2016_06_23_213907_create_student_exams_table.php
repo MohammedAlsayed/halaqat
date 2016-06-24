@@ -14,6 +14,9 @@ class CreateStudentExamsTable extends Migration
     {
         Schema::create('student_exams', function (Blueprint $table) {
             $table->increments('id');
+            $table->unsignedInteger('student_id');
+            $table->unsignedInteger('exam_id');
+            $table->unsignedInteger('grade_id');
             $table->timestamps();
         });
     }

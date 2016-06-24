@@ -14,8 +14,11 @@ class CreateEmployeesRateTable extends Migration
     {
         Schema::create('employees_rate', function (Blueprint $table) {
             $table->increments('id');
+            $table->unsignedInteger('employee_id');
+            $table->integer('rate');
             $table->timestamps();
         });
+        
     }
 
     /**
