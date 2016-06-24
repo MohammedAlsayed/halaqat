@@ -14,6 +14,7 @@ class CreateHalaqahTimesTable extends Migration
     {
         Schema::create('halaqah_times', function (Blueprint $table) {
             $table->increments('id');
+            $table->string('time',100);
             $table->timestamps();
         });
     }

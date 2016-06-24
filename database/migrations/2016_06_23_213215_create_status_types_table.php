@@ -14,6 +14,7 @@ class CreateStatusTypesTable extends Migration
     {
         Schema::create('status_types', function (Blueprint $table) {
             $table->increments('id');
+            $table->string('name',100);
             $table->timestamps();
         });
     }
@@ -25,6 +26,6 @@ class CreateStatusTypesTable extends Migration
      */
     public function down()
     {
-        Schema::drop('status_type');
+        Schema::drop('status_types');
     }
 }

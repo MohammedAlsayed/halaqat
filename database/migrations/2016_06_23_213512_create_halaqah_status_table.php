@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateHalaqahStatusTypeTable extends Migration
+class CreateHalaqahStatusTable extends Migration
 {
     /**
      * Run the migrations.
@@ -14,6 +14,9 @@ class CreateHalaqahStatusTypeTable extends Migration
     {
         Schema::create('halaqah_status', function (Blueprint $table) {
             $table->increments('id');
+            $table->unsignedInteger('halaqah_id');
+            $table->unsignedInteger('status');
+            $table->unsignedInteger('time');
             $table->timestamps();
         });
     }

@@ -14,6 +14,8 @@ class CreateTransportationsTable extends Migration
     {
         Schema::create('transportations', function (Blueprint $table) {
             $table->increments('id');
+            $table->unsignedInteger('student_id');
+            $table->unsignedInteger('driver');
             $table->timestamps();
         });
     }

@@ -15,14 +15,11 @@ class CreateEmployeesAttendenceTable extends Migration
     {
         Schema::create('employees_attendence', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('employee_id');
+            $table->unsignedInteger('employee_id');
             $table->boolean('attended');
             $table->boolean('execuse');
-            $table->string('reason',255);
+            $table->string('reason',255)->nullable();
             $table->timestamps();
-        });
-        Schema::create('employees_attendence', function (Blueprint $table) {
-            $table->foreign('employee_id')->refernces('id')->on('employees')->onDelete('CASCADE');
         });
     }
 
